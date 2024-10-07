@@ -138,19 +138,15 @@ def inversions(items):
     '''
     count = 0
     if len(items) == 3:
-        ord_items = set(items)
+        sorted_list = sorted(items)
         for i in range(3):
-            if ord_items[i] != items[i]:
+            if sorted_list[i] != items[i]:
                 count+=1
         result = count
     else:
         result = -1
     
     return result
-
-
-
-    pass # replace 'pass' with a return statement.    
     
     
 # --------------------------------------------------------------
