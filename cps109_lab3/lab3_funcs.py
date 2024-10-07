@@ -136,6 +136,19 @@ def inversions(items):
     the end of the course, and in future courses.
     
     '''
+    count = 0
+    if len(items) == 3:
+        ord_items = set(items)
+        for i in range(3):
+            if ord_items[i] != items[i]:
+                count+=1
+        result = count
+    else:
+        result = -1
+    
+    return result
+
+
 
     pass # replace 'pass' with a return statement.    
     
