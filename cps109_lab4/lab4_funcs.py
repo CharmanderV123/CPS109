@@ -48,10 +48,10 @@ def sumsquares(n):
 
     '''
     result = 0
-    for i in range(n):
+    for i in range(n+1):
         result+= (i**2)
 
-    return result # replace 'pass' with a return statement.
+    return result # replace 'pass' with a return statement. 
 
 
 # --------------------------------------------------------------
