@@ -111,8 +111,11 @@ def listexponential(n, base):
     every day for a month? 
    
     '''
+    result= []
+    for i in range(n):
+        result.append(base**i)
 
-    pass # replace 'pass' with a return statement. 
+    return result # replace 'pass' with a return statement. 
     
     
 # --------------------------------------------------------------
