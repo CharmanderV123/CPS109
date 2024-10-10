@@ -22,7 +22,7 @@ def sumeven(n):
     '''
     result = 0
     for i in range(n):
-        result+=2
+        result+=(2*i)
 
     return result # replace 'pass' with a return statement.
 
