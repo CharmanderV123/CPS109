@@ -20,8 +20,11 @@ def sumeven(n):
     without writing a loop at all?
     
     '''
+    result = 0
+    for i in range(n):
+        result+=2
 
-    pass # replace 'pass' with a return statement.
+    return result # replace 'pass' with a return statement.
 
 
 # --------------------------------------------------------------
@@ -44,8 +47,11 @@ def sumsquares(n):
     own code you wrote previously!
 
     '''
+    result = 0
+    for i in range(n):
+        result+= (i**2)
 
-    pass # replace 'pass' with a return statement.
+    return result # replace 'pass' with a return statement.
 
 
 # --------------------------------------------------------------
