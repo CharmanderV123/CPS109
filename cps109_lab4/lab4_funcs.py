@@ -214,7 +214,26 @@ def maxbytype(items):
 
     '''
 
-    pass # replace 'pass' with a return statement.
+    result = [0, 0.0, ""]
+    for item in items:
+        if type(item) == float:
+            if result[1] < item:
+                result[1]=item
+        elif type(item) == int:
+            if result[0] < item:
+                result[0]=item
+        elif type(item) == str:
+            if result[2]<item:
+                result[2]=item
+        
+    if result[0] == 0:
+        result[0] = None
+    if result[1] == 0.0:
+        result[1] = None
+    if len(result[2]) == 0:
+        result[2] = None
+
+    return tuple(result) # replace 'pass' with a return statement.
     
 
     
