@@ -1,15 +1,18 @@
-count = 0
-items = [2, 1, 3]
+num = int(input("Enter a num: "))
+result = 0
+str_num = str(abs(num))
 
-if len(items) == 3:
-    sorted_list = sorted(items)
-    for i in range(3):
-        if sorted_list[i] != items[i]:
-            count+=1
-    if count-1 == -1:
-        result= 0
-    else:
-        result = count-1
-else:
-    result = -1
-print(result)
+#print(len(str_num))
+
+for i in range(len(str_num)):
+#    print(((temp//(len(str_num)-i))))
+#    print((temp//(len(str_num))-i)%2)
+    if ((num//(len(str_num))-i)%2 != 0):
+#        print(temp)
+#        print((len(str_num))-i)
+#        print(((temp//(len(str_num))-i)))
+        print(str_num[len(str_num)-(i+1)])
+        result+=int(str_num[len(str_num)-(i+1)])
+
+#    temp = temp-()
+print (result)

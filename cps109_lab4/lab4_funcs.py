@@ -58,7 +58,7 @@ def sumsquares(n):
 # 3) Summing Odd Digits
 # --------------------------------------------------------------   
 def odddigitsum(num):
-    
+    import math
     '''
     This function should calculate and return the sum of the 
     odd digits in the input integer num. The input can be any 
@@ -75,8 +75,20 @@ def odddigitsum(num):
     bring this up here of all places...? 
     
     '''
+    result = 0
+    str_num = str(abs(num))
 
-    pass # replace 'pass' with a return statement.    
+#print(len(str_num))
+
+    for i in range(0,len(str_num)):
+
+        if (int(str_num[i])%2 > 0):
+            result+=int(str_num[i])
+            
+    return result
+    
+
+  # replace 'pass' with a return statement.    
     
     
 # --------------------------------------------------------------
