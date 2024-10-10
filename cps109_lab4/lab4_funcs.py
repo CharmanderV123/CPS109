@@ -136,8 +136,15 @@ def digitcat(s):
     If there are no digits, return None.
 
     '''
-
-    pass # replace 'pass' with a return statement.
+    result = ""
+    for i in range(len(s)):
+        if s[i].isdigit() == True:
+            result+=s[i]
+    if result != "":
+        result = int(result)
+    else:
+        result = None
+    return result # replace 'pass' with a return statement.
     
     
 # --------------------------------------------------------------
