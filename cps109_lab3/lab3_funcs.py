@@ -69,11 +69,13 @@ def duplicates(items):
     science that you will explore further in future courses. 
 
     '''
-    if(len(items)==4):
+    if(len(items)==3):
         count=0
-        for i in range(len(items)-1):
-            if items[i]==items[i+1]:
-                count+=1
+        for n in range(len(items)):
+            if count ==0:
+                for i in range(n+1,len(items)):
+                    if items[n]==items[i]:
+                        count+=1
         if count == 0:
             result = 'one-of-a-kind'
         elif count == 1:
@@ -138,20 +140,15 @@ def inversions(items):
     '''
     count = 0
     if len(items) == 3:
-        ord_items = set(items)
         for i in range(3):
-            if ord_items[i] != items[i]:
-                count+=1
+            for k in range(i+1, 3):
+                if(items[i]> items[k]):
+                    count+=1
         result = count
     else:
         result = -1
     
     return result
-
-
-
-    pass # replace 'pass' with a return statement.    
-    
     
 # --------------------------------------------------------------
 # 4) Increasing, Strictly or Otherwise?
@@ -187,8 +184,22 @@ def increasing(items, strict):
     
     LOOPING IS NOT REQUIRED TO SOLVE THIS PROBLEM!
     '''
-    
-    pass # replace 'pass' with a return statement.
+    set_items = set(items)
+    if len(items)!=3 or (type(strict) != bool):
+        result = "invalid input"
+    elif (items == sorted(items) and strict == False):
+        result = True
+    elif (len(set_items) == 3) and (strict == True):
+        if(sorted(set_items) == items):
+            result = True
+        else:
+            result =False
+        
+    else:
+        result = False
+    return result # replace 'pass' with a return statement.
+
+
    
    
 # --------------------------------------------------------------
@@ -217,8 +228,21 @@ def calculator(op1, op2, operator):
     If the operator is not one of the five above, or there
     would be a division by zero, return None.
     '''
-    
-    pass # replace 'pass' with a return statement.
+    list_operators = ['+','-','*','/', '**']
+    result = None
+    if list_operators.count(operator)==1:
+        if operator == '+':
+            result = op1 + op2
+        elif operator == '-':
+            result = op1-op2
+        elif operator == '*':
+            result = op1*op2
+        elif operator == '**':
+            result = op1**op2
+        else:
+            if op2 != 0:
+                result=op1/op2
+    return result # replace 'pass' with a return statement.
     
     
         
