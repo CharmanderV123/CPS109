@@ -169,8 +169,12 @@ def stringtofloatlist(fltstr):
     either way!
     
     '''
+    result = []
 
-    pass # replace 'pass' with a return statement.
+    for i in fltstr.split(","):
+        result.append(float(i))
+
+    return result # replace 'pass' with a return statement.
 
     
 # --------------------------------------------------------------
