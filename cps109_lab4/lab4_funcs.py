@@ -20,8 +20,11 @@ def sumeven(n):
     without writing a loop at all?
     
     '''
+    result = 0
+    for i in range(n):
+        result+=(2*i)
 
-    pass # replace 'pass' with a return statement.
+    return result # replace 'pass' with a return statement.
 
 
 # --------------------------------------------------------------
@@ -44,15 +47,18 @@ def sumsquares(n):
     own code you wrote previously!
 
     '''
+    result = 0
+    for i in range(n+1):
+        result+= (i**2)
 
-    pass # replace 'pass' with a return statement.
+    return result # replace 'pass' with a return statement. 
 
 
 # --------------------------------------------------------------
 # 3) Summing Odd Digits
 # --------------------------------------------------------------   
 def odddigitsum(num):
-    
+    import math
     '''
     This function should calculate and return the sum of the 
     odd digits in the input integer num. The input can be any 
@@ -69,8 +75,20 @@ def odddigitsum(num):
     bring this up here of all places...? 
     
     '''
+    result = 0
+    str_num = str(abs(num))
 
-    pass # replace 'pass' with a return statement.    
+#print(len(str_num))
+
+    for i in range(0,len(str_num)):
+
+        if (int(str_num[i])%2 > 0):
+            result+=int(str_num[i])
+            
+    return result
+    
+
+  # replace 'pass' with a return statement.    
     
     
 # --------------------------------------------------------------
@@ -93,8 +111,11 @@ def listexponential(n, base):
     every day for a month? 
    
     '''
+    result= []
+    for i in range(n):
+        result.append(base**i)
 
-    pass # replace 'pass' with a return statement. 
+    return result # replace 'pass' with a return statement. 
     
     
 # --------------------------------------------------------------
@@ -115,8 +136,15 @@ def digitcat(s):
     If there are no digits, return None.
 
     '''
-
-    pass # replace 'pass' with a return statement.
+    result = ""
+    for i in range(len(s)):
+        if s[i].isdigit() == True:
+            result+=s[i]
+    if result != "":
+        result = int(result)
+    else:
+        result = None
+    return result # replace 'pass' with a return statement.
     
     
 # --------------------------------------------------------------
@@ -141,8 +169,12 @@ def stringtofloatlist(fltstr):
     either way!
     
     '''
+    result = []
 
-    pass # replace 'pass' with a return statement.
+    for i in fltstr.split(","):
+        result.append(float(i))
+
+    return result # replace 'pass' with a return statement.
 
     
 # --------------------------------------------------------------
@@ -182,7 +214,26 @@ def maxbytype(items):
 
     '''
 
-    pass # replace 'pass' with a return statement.
+    result = [0, 0.0, ""]
+    for item in items:
+        if type(item) == float:
+            if result[1] < item:
+                result[1]=item
+        elif type(item) == int:
+            if result[0] < item:
+                result[0]=item
+        elif type(item) == str:
+            if result[2]<item:
+                result[2]=item
+        
+    if result[0] == 0:
+        result[0] = None
+    if result[1] == 0.0:
+        result[1] = None
+    if len(result[2]) == 0:
+        result[2] = None
+
+    return tuple(result) # replace 'pass' with a return statement.
     
 
     
