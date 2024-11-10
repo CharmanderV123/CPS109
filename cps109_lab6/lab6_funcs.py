@@ -17,7 +17,7 @@ the challenge mode is not required to pass the tester.
 # --------------------------------------------------------------
 
 def largest_diff(items):
-
+    result = sorted(items)[len(items)-1]-sorted(items)[0]
     '''
     This first question is very simple, and is intended to convey 
     the spirit behind the challenge modes.
@@ -38,14 +38,18 @@ def largest_diff(items):
 
     '''
 
-    pass # replace 'pass' with a return statement.
+    return result # replace 'pass' with a return statement.
 
 # --------------------------------------------------------------
 # 2) Target sum of two list elements
 # --------------------------------------------------------------
 
 def two_summers(items, target):
-
+    result = None
+    for i in items:
+        if (items.count(target-i)>0) and ((target/2) != i):
+            result = (i, target-i)
+            break
     '''
     Assume that items is a sorted list of integers (ascending), 
     and target is an integer value.
@@ -69,7 +73,7 @@ def two_summers(items, target):
 
     '''
 
-    pass # replace 'pass' with a return statement.
+    return result # replace 'pass' with a return statement.
 
 
 # --------------------------------------------------------------
@@ -77,7 +81,13 @@ def two_summers(items, target):
 # --------------------------------------------------------------
 
 def count_dominators(items):
-
+    newlist =[]
+    newlist=(newlist+items)
+    result = 0
+    for item in items:
+        if sorted(newlist)[len(newlist)-1]== item:
+            result+=1
+        newlist.remove(item)
     '''
     This is another great problem from Ilkka's problem set.
     
@@ -101,7 +111,7 @@ def count_dominators(items):
 
     '''
 
-    pass # replace 'pass' with a return statement.
+    return result # replace 'pass' with a return statement.
 
 
 # --------------------------------------------------------------
@@ -109,7 +119,13 @@ def count_dominators(items):
 # --------------------------------------------------------------
 
 def safe_squares_rooks(n, rooks):
-
+    numlist1 = []
+    numlist2 = []
+    for rook in rooks:
+        numlist1.append(rook[0])
+        numlist2.append(rook[1])
+    cspots = n*len(set(numlist1)) + n*len(set(numlist2))-(len(set(numlist1))*len(set(numlist2)))
+    result = n**2 - cspots
     '''
     This is another great problem from Ilkka's problem set.
     
@@ -145,7 +161,7 @@ def safe_squares_rooks(n, rooks):
 
     '''
 
-    pass # replace 'pass' with a return statement.
+    return result # replace 'pass' with a return statement.
 
 
 # --------------------------------------------------------------
@@ -153,6 +169,19 @@ def safe_squares_rooks(n, rooks):
 # --------------------------------------------------------------
 
 def remove_after_kth(items, k):
+    item_count = []
+    item_temp = []
+    result = []
+    setitems = list(set(items))
+
+    for item in setitems:
+        item_count.append(k)
+
+    for i in items:
+        if item_count[setitems.index(i)]>0:
+            item_count[setitems.index(i)]-=1
+            result.append(i)
+
 
     '''
     This is another great problem from Ilkka's problem set.
@@ -177,5 +206,5 @@ def remove_after_kth(items, k):
 
     '''
 
-    pass # replace 'pass' with a return statement.
+    return result # replace 'pass' with a return statement.
 
